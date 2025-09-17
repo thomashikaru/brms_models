@@ -13,6 +13,7 @@
 # This job runs the example analysis script
 
 # Load required modules
+source /etc/profile.d/modules.sh
 module load openmind8/apptainer/1.1.7
 
 # Set up environment

@@ -23,6 +23,7 @@ R_SCRIPT=$1
 MODEL_NAME=$(basename "$R_SCRIPT" .R)
 
 # Load required modules
+source /etc/profile.d/modules.sh
 module load openmind8/apptainer/1.1.7
 
 # Set up environment
