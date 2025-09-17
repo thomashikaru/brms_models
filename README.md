@@ -6,7 +6,7 @@ A simple, reproducible system for running Bayesian Regression Models using Stan 
 
 This system provides a straightforward approach to:
 - Write R scripts for your BRMS models
-- Run models using Singularity containers
+- Run models using Apptainer containers
 - Submit jobs to SLURM for cluster computing
 - Manage multiple model analyses efficiently
 
@@ -198,12 +198,12 @@ The system automatically generates SLURM job scripts with appropriate resource a
 
 ### Software
 - R with `brms` package
-- Singularity container with R and required packages
+- Apptainer container with R and required packages
 - SLURM job scheduler
 
 ### File Paths
 Update the following paths in the scripts for your environment:
-- Singularity image path in `scripts/submit_job.sh`
+- Apptainer image path in `scripts/submit_job.sh`
 
 ## Example Workflow
 
@@ -240,7 +240,7 @@ Update the following paths in the scripts for your environment:
 
 ### Common Issues
 
-1. **Singularity image not found:**
+1. **Apptainer image not found:**
    - Update the `SINGULARITY_IMAGE` path in `scripts/submit_job.sh`
 
 2. **Data file not found:**

@@ -12,6 +12,9 @@
 # Example BRMS Model SLURM Job
 # This job runs the example analysis script
 
+# Load required modules
+module load openmind8/apptainer/1.1.7
+
 # Set up environment
 export SINGULARITY_BIND="$PWD:$PWD"
 export SINGULARITY_PWD="$PWD"
@@ -34,8 +37,8 @@ mkdir -p outputs/fitted_models
 mkdir -p outputs/logs
 
 # Run the analysis
-echo "Running analysis with Singularity..."
-singularity exec \
+echo "Running analysis with Apptainer..."
+apptainer exec \
     --bind "$PWD:$PWD" \
     --pwd "$PWD" \
     "$SINGULARITY_IMAGE" \
