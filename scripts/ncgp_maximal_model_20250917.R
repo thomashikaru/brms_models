@@ -6,10 +6,9 @@ dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp_data_20250917.rds")
 
 # Define priors for Bayesian models
 priors <- c(
-    prior(normal(0, 1), class = "b"),
-    prior(normal(0, 1), class = "b", dpar = "hu"),
+    prior(normal(0, 0.1), class = "b"),
+    prior(normal(0, 0.1), class = "b", dpar = "hu"),
     prior(normal(0, 1), class = "Intercept"),
-    prior(exponential(1), class = "sd")
 )
 
 if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
@@ -24,12 +23,11 @@ if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
         ),
         data = dat,
         family = hurdle_lognormal(),
+        backend = "rstan",
         prior = priors,
         chains = 4,
         cores = 4,
         seed = 123,
-        center = TRUE,
-        scale = TRUE,
         refresh = 1
     )
 
