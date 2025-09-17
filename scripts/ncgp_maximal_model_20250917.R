@@ -23,7 +23,6 @@ if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
         data = dat,
         family = hurdle_lognormal(),
         prior = priors,
-        threads = threading(4),
         chains = 4,
         cores = 4,
         seed = 123,
