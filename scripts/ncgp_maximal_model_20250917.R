@@ -2,6 +2,12 @@ library(brms)
 
 dat <- load("/om2/user/thclark/brms_models/data/ncgp_data_20250917.RData")
 
+# Define priors for Bayesian models
+priors <- c(
+    prior(normal(0, 0.1), class = "b"),
+    prior(normal(0, 10.0), class = "Intercept")
+)
+
 if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
     cat("Model already exists.")
 } else {
