@@ -1,0 +1,1 @@
+singularity exec --bind "$PWD":"$PWD" --pwd "$PWD" /om2/user/thclark/brms_models/brms_240807.sif Rscript ANALYSISNAME.R
