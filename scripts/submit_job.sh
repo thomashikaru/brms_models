@@ -10,6 +10,7 @@ DEFAULT_TIME="24:00:00"
 DEFAULT_MEMORY="16G"
 DEFAULT_CPUS="4"
 DEFAULT_PARTITION="normal"
+DEFAULT_ACCOUNT="evlab"
 
 # Check if R script is provided
 if [ $# -eq 0 ]; then
@@ -53,6 +54,7 @@ cat > "$JOB_SCRIPT" << EOF
 #SBATCH --error=outputs/logs/slurm_%j.err
 #SBATCH --time=$TIME_LIMIT
 #SBATCH --partition=$DEFAULT_PARTITION
+#SBATCH --account=$DEFAULT_ACCOUNT
 #SBATCH --nodes=1
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=$CPUS
