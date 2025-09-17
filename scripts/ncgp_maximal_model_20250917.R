@@ -1,6 +1,6 @@
 library(brms)
 
-dat <- load("/om2/user/thclark/brms_models/data/ncgp_data_20250917.RData")
+dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp_data_20250917.rds")
 
 # Define priors for Bayesian models
 priors <- c(
