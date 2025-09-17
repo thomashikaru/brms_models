@@ -8,7 +8,7 @@ dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp_data_20250917.rds")
 priors <- c(
     prior(normal(0, 0.1), class = "b"),
     prior(normal(0, 0.1), class = "b", dpar = "hu"),
-    prior(normal(0, 1), class = "Intercept"),
+    prior(normal(0, 1), class = "Intercept")
 )
 
 if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
