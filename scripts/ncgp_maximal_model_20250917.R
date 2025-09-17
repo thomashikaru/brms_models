@@ -1,5 +1,7 @@
 library(brms)
 
+rstan::rstan_options(auto_write = TRUE)
+
 dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp_data_20250917.rds")
 
 # Define priors for Bayesian models
@@ -28,7 +30,6 @@ if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
         seed = 123,
         center = TRUE,
         scale = TRUE,
-        control = list(adapt_delta = 0.85, max_treedepth = 10),
         refresh = 1
     )
 
