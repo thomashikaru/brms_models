@@ -11,7 +11,7 @@ priors <- c(
     prior(normal(0, 1), class = "Intercept")
 )
 
-if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
+if (file.exists("/om2/user/thclark/brms_models/outputs/fitted_models/ncgp_maximal_model_20250917.rds")) {
     cat("Model already exists.")
 } else {
     m <- brm(
@@ -31,5 +31,5 @@ if (file.exists("fitted_models/ncgp_maximal_model_20250917.RData")) {
         refresh = 1
     )
 
-    save(m, file = "/om2/user/thclark/brms_models/fitted_models/ncgp_maximal_model_20250917.RData")
+    saveRDS(m, file = "/om2/user/thclark/brms_models/outputs/fitted_models/ncgp_maximal_model_20250917.rds")
 }
