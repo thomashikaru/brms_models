@@ -1,4 +1,5 @@
 library(brms)
+library(dplyr)
 
 rstan::rstan_options(auto_write = TRUE)
 
