@@ -8,12 +8,6 @@ dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp_data_20250917.rds")
 # filter data for only rows with Region == "Predicate"
 dat <- dat[dat$Region == "Predicate", ]
 
-# group by both sent_id and submission_id, and only keep the observation with lowest word_num_in_sent
-dat <- dat %>%
-    group_by(sent_id, submission_id) %>%
-    filter(word_num_in_sent == min(word_num_in_sent)) %>%
-    ungroup()
-
 # Define priors for Bayesian models
 priors <- c(
     prior(normal(0, 0.1), class = "b"),

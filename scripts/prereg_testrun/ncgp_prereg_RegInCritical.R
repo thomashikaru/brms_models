@@ -13,7 +13,7 @@ priors <- c(
     prior(normal(0, 1), class = "Intercept")
 )
 
-model_name <- "ncgp_prereg_RegIn"
+model_name <- "ncgp_prereg_RegInCritical"
 
 if (file.exists(paste0("/om2/user/thclark/brms_models/outputs/fitted_models/", model_name, ".rds"))) {
     cat("Model already exists.")
