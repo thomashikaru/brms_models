@@ -6,7 +6,7 @@ rstan::rstan_options(auto_write = TRUE)
 dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp2_data_20251015.rds")
 
 # filter data for only rows with Region == "Predicate"
-dat <- dat[dat$Region == "Predicate", ]
+dat <- dat[dat$Region == "PredicateWithPunct", ]
 
 # Define priors for Bayesian models
 priors <- c(
