@@ -2,7 +2,7 @@ library(brms)
 
 rstan::rstan_options(auto_write = TRUE)
 
-dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp2_data_20251015.rds")
+dat <- readRDS("/om2/user/thclark/brms_models/data/ncgp2_data_20251110.rds")
 
 # filter data for only rows with Region == "CriticalWord"
 dat <- dat[dat$Region == "CriticalWord", ]
