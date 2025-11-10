@@ -18,10 +18,10 @@ if (file.exists(paste0("/om2/user/thclark/brms_models/outputs/fitted_models/", m
 } else {
     m <- brm(
         bf(
-            total_duration ~ log_freq + word_nchar + surprisal + word_num_in_sent + pos_tag + Region * cond_id +
-                (log_freq + word_nchar + surprisal + word_num_in_sent || submission_id) +
+            total_duration ~ log_freq + word_nchar + surprisal_nc + word_num_in_sent + pos_tag + Region * cond_id +
+                (log_freq + word_nchar + surprisal_nc + word_num_in_sent || submission_id) +
                 (1 || Item),
-            hu ~ log_freq + word_nchar + surprisal + word_num_in_sent + pos_tag
+            hu ~ log_freq + word_nchar + surprisal_nc + word_num_in_sent + pos_tag
         ),
         data = dat,
         family = hurdle_lognormal(),

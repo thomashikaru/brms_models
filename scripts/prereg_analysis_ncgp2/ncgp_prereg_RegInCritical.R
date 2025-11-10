@@ -19,8 +19,8 @@ if (file.exists(paste0("/om2/user/thclark/brms_models/outputs/fitted_models/", m
     cat("Model already exists.")
 } else {
     m <- brm(
-        RegIn_excl ~ has_error_posterior + log_freq + word_nchar + surprisal + word_num_in_sent + pos_tag +
-            (has_error_posterior + log_freq + word_nchar + surprisal + word_num_in_sent || submission_id) +
+        RegIn_excl ~ has_error_posterior + log_freq + word_nchar + surprisal_nc + word_num_in_sent + pos_tag +
+            (has_error_posterior + log_freq + word_nchar + surprisal_nc + word_num_in_sent || submission_id) +
             (1 || Item),
         data = dat,
         family = bernoulli(),
