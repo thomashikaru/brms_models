@@ -56,7 +56,7 @@ if (file.exists(paste0("/orcd/data/rplevy/001/om2/thclark/brms_models/outputs/fi
                 (Region * cond_id || Item),
             hu ~ log_freq_z + word_nchar_z + surprisal_nc_z + word_num_in_sent + pos_tag + Region * cond_id +
                 (Region * cond_id || submission_id) +
-                (Region * cond_id || Item),
+                (Region * cond_id || Item)
         ),
         data = dat,
         family = hurdle_lognormal(),
